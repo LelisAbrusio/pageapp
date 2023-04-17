@@ -145,7 +145,7 @@ span.ripple {
 
 .slider {
     width: 80%;
-    margin: 50px auto;
+    margin: 50px auto !important;
 }
 
     .slider img {

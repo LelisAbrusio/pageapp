@@ -13,6 +13,7 @@
 *.lock.json
 
 .vscode/
+.vs/
 
 *.tmp
 *.log
