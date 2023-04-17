@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<div class="col">
+    <p>
+        This project demonstrates a .NET MVC application with various front-end components, including a digital clock, navigation bar, main content with an asynchronous list display, image slider, mouse position indicators, and a footer.
+    </p>
+    
+    <div class="fullBody">
+        <button id="loadItems" class="ripple-effect">Load Items</button>
+    </div>
+    
+    <table id="itemTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+            </tr>
+        </thead>
+        <tbody id="itemList"></tbody>
+    </table>
+</div>
+
+<script>
+    document.getElementById("loadItems").addEventListener("click", function () {
+        fetch("@Url.Action("GetAsyncItems", "Home")")
+            .then(response => response.json())
+            .then(items => {
+                const itemList = document.getElementById("itemList");
+                itemList.innerHTML = "";
+                items.forEach(item => {
+                    const tableRow = document.createElement("tr");
+                    const tableData = document.createElement("td");
+                    tableData.innerText = item;
+                    tableRow.appendChild(tableData);
+                    itemList.appendChild(tableRow);
+                });
+            });
+    });
+</script>

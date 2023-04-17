@@ -1,0 +1,219 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.clock {
+    height: 10vh;
+    color: white;
+    font-size: 10vh;
+    font-family: sans-serif;
+    line-height: 10vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+    .clock::before, .clock::after {
+        content: '';
+        width: 7ch;
+        height: 3vh;
+        background: linear-gradient(to top, transparent, black);
+        position: absolute;
+        z-index: 2;
+    }
+
+    .clock::after {
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent, black);
+    }
+
+    .clock > div {
+        display: flex;
+    }
+
+.tick {
+    line-height: 8vh;
+}
+
+.tick-hidden {
+    opacity: 0;
+}
+
+.move {
+    animation: move linear 1s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+}
+
+
+
+.navbar {
+    background-color: #333 !important;
+}
+
+.navbar-brand {
+    color: #fff !important;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.mousePosition {
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.mouseTitle {
+    font-size: 14px;
+}
+
+.mousePos {
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.fullBody {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    color: #fff;
+    background-color: #6200ee;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    outline: 0;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+.slider {
+    width: 80%;
+    margin: 50px auto;
+}
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(128, 128, 128);
+    color: black;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-next {
+    right: -50px;
+}
+
+    .slick-prev:hover,
+    .slick-next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+    .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+        color: black;
+        outline: none;
+        background: rgb(128, 128, 128);
+    }
+
+.slick-dots {
+    text-align: center;
+    padding: 10px 0;
+    bottom: -50px;
+}
+
+    .slick-dots li {
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+        .slick-dots li button {
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: #333;
+        }
+
+footer {
+    background-color: #ddd;
+}

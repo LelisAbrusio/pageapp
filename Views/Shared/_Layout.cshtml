@@ -1,0 +1,117 @@
+﻿@model List<PageApplication.Models.RandomObject>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PageApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PageApplication.styles.css" asp-append-version="true" />
+
+
+</head> 
+<body>
+    <header>
+        <div class="clock">
+            <div class="hours">
+                <div class="first">
+                    <div class="number">0</div>
+                </div>
+                <div class="second">
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <div class="tick">:</div>
+            <div class="minutes">
+                <div class="first">
+                    <div class="number">0</div>
+                </div>
+                <div class="second">
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <div class="tick">:</div>
+            <div class="seconds">
+                <div class="first">
+                    <div class="number">0</div>
+                </div>
+                <div class="second infinite">
+                    <div class="number">0</div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Rodolfo Lelis Abrusio</a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Mouse position indicators -->
+                <div class="row">
+   
+
+                    <div class="col-md-6">
+                        <div class="mousePosition">
+                            <p class="mouseTitle">Mouse X Position(px)</p>
+                            <p class="mousePos" id="MPX"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mousePosition">
+                            <p class="mouseTitle">Mouse Y Position(py)</p>
+                            <p class="mousePos" id="MPY"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    document.addEventListener("mousemove", function (event) {
+                        document.getElementById("MPX").innerText = `${event.clientX}`;
+                        document.getElementById("MPY").innerText = `${event.clientY}`;
+                    });
+                </script>
+            </div>
+            <div class="col-md-6">
+                <!-- Main content -->
+                @RenderBody()
+            </div>
+            <div class="col-md-3">
+                <!-- Image slider -->
+                <div class="slider">
+                    <div><img style="width: 100%" src="https://www.cameraegg.org/wp-content/uploads/2015/06/canon-powershot-g3-x-sample-images-1.jpg" alt="Image 1"></div>
+                    <div><img style="width: 100%" src="https://www.cameraegg.org/wp-content/uploads/2015/06/canon-powershot-g3-x-sample-images-2.jpg" alt="Image 2"></div>
+                    <div><img style="width: 100%" src="https://www.cameraegg.org/wp-content/uploads/2015/06/canon-powershot-g3-x-sample-images-3.jpg" alt="Image 3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            Visit  &nbsp;
+            <a href="https://allari.com/" target="_blank"> allari.com</a>&nbsp; &copy; 2023
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        //console.log('32525352523t32')
+
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
